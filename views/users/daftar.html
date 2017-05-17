@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>makan dilaut</title>
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/font-material/material-icons.css">
+    <link rel="stylesheet" href="/material/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="/material/css/ripples.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div style="margin-top:50px;" class="container ">
+        <div class="daftar col-md-8 col-md-offset-2 well ">
+            <div class="col-md-10 col-md-offset-5"  style="margin-top:30px;">
+
+                <img src="/images/Logo-Gundar.png" style="margin-left:-30px; margin-bottom:30px;" width="130" height="130" alt="">
+            </div>
+            <div class="form-group" style="margin-bottom: -15px;">
+                <h1 style="margin-left:140px;" class="judul col-md-10 col-md-offset-3">Pendaftaran Virtual Lab  <br> <h2 class="col-md-offset-3">Universitas Gunadarma </h2> </h1>
+
+                <hr>
+
+            </div>
+
+            <div class="col-md-9 col-md-offset-1" style="margin-bottom: -15px;">
+
+              
+                <label style="margin-left: 16px;" class="control-label ">                 
+                                  Data Praktikan</label>
+                <hr class="garisbagian">
+
+            </div>
+            <div class="col-md-12 col-md-offset-1">
+                <form class="daftar form-horizontal text-center" action="/mendaftar" method="post">
+                    <div class="col-md-4">
+                        <div id="ketikEmail" class="form-group {{error}}">
+
+                            <div class="input-group ">
+
+                                <span class="input-group-addon"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i></span>
+                                <input class="form-control " name="nama" placeholder="Nama Anda" type="name" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-1">
+                        <div id="ketikPass" class="form-group  {{error}}">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card-o fa-lg" aria-hidden="true"></i></span>
+                                <input class="form-control" name="email" placeholder="User ID" type="email" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div id="ketikEmail" class="form-group {{error}}">
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i></span>
+                                <input class="form-control " name="password" placeholder="Password" type="password" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-1">
+                        <div id="ketikEmail" class="form-group {{error}}">
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i></span>
+                                <input class="form-control " placeholder="Konfirmasi Password" type="password" value="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="padding-bottom: 30px; padding-left: 20px;" class="col-md-10 col-md-offset-2">
+
+                        <br>
+                        <br>
+                        <a class=" btn btn-raised btn-info btn-md" href="/login"> Kembali</a>
+                        <button id="login" style="margin-left: 10px;" class="btn btn-raised btn-primary " type="submit">  Submit</button>
+                    </div>
+
+
+            </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+{{>footer}}
+<script>
+    //var nomor = $("#selectHarga").val();
+    // alert(nomor);
+
+    // buat input change klik id login
+
+    // $(document).on("click", "#login", function(e) {
+
+
+    //   e.preventDefault();
+    //   console.log('select_link clicked');
+
+    //   dataEmail = $('input[name=email]').val();
+    //   dataPass = $('input[name=password]').val();
+
+
+    //   if (($.trim(dataEmail) == '') && ($.trim(dataPass) == '')) {
+
+    //     $('#ketikEmail').addClass('has-error is-empty');
+
+    //     $('#ketikPass').addClass('has-error is-empty');
+
+    //     $('#pesan').addClass('has-error is-empty');
+
+    //     $('label').show();
+
+
+    //   } else if (($.trim(dataPass) == '')) {
+    //     $('#ketikPass').addClass('has-error is-empty');
+
+    //     $('#pesan').addClass('has-error is-empty');
+
+    //     $('label').show();
+
+
+    //   } else if (($.trim(dataEmail) == '')) {
+
+
+    //     $('#ketikEmail').addClass('has-error is-empty');
+    //     $('#pesan').addClass('has-error is-empty');
+    // $('label').show();
+
+
+    //   }else{
+
+    //   $.ajax({
+    //     //disini
+
+    //     type: 'POST',     
+    //     data: $("form").serialize(),
+    //     dataType: 'html',
+    //     url: 'http://127.0.0.1:3000/login'
+    //     // success: function(res) {
+
+    //     //   if (res == true){
+
+    //     //         alert('bener');
+
+    //     //   }else{
+
+    //     //        console.log(res)
+    //     //        alert('salah');
+
+    //     //   }
+
+    //     //   },
+
+    //     // error: function(res){
+
+    //     //     alert('failure');
+
+    //     // }
+
+
+
+    //   });
+    // });
+
+    // buat input change keyboard
+</script>

@@ -1,0 +1,133 @@
+ {{>headerAdmin}}
+
+<div style="margin-top:40px;" class="container">
+
+  <div class="page-header text-left">
+
+
+
+  </div>
+
+  <div id="wrapper" class="panelEdit row">
+
+    <div class="well bs-component col-md-11 ">
+
+
+
+      <h3 for=""> Tambah Soal Pemrograman Java</h3>
+      <hr>
+      <div class="form-group">
+
+        <label for="">Judul Ringkasan Soal</label>
+
+        <br>
+        <div>
+          <input id="judulSoal" class="form-control" type="" name="judul" value="">
+
+        </div>
+
+      </div>
+
+
+
+      <div id="editor-container">
+
+        <label for="editor-container" class="control-label">       
+                                  </label>
+        <hr>
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="">Jawaban</label>
+        <br>
+        <div>
+          <textarea id="jawaban" class="form-control" type="" name="judul" value=""></textarea>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <div class="form-group text-right">
+        <a id="clickSoal" class="btn btn-raised btn-info" type="submit">Tambah Soal</a>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+{{>footer}}
+<script>
+  var quill = new Quill('#editor-container', {
+    modules: {
+      toolbar: [
+        ['bold', 'italic'],
+        ['link', 'blockquote', 'code-block', 'image'],
+        [{
+          list: 'ordered'
+        }, {
+          list: 'bullet'
+        }]
+      ]
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+  });
+
+
+
+  quill.on('selection-change', function (range) {
+    console.log('selection-change', range)
+  });
+  quill.on('text-change', function (delta, source) {
+    console.log('text-change', delta, source)
+  });
+
+  $("#clickSoal").click(function () {
+
+    alert('kena');
+
+    var soal = document.querySelector(".ql-editor").innerHTML;
+    var judul = $("#judulSoal").val();
+    var jawaban = $("#jawaban").val();
+
+    // alert(subject);
+    // alert(email);
+
+    var request = $.ajax({
+      url: "http://127.0.0.1:3000/add-soal",
+      method: "POST",
+      data: {
+        soal: soal,
+        judul: judul,
+        jawaban: jawaban,
+      },
+      dataType: "html"
+    });
+
+    request.done(function (msg) {
+      $("#log").html(msg);
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+      console.log("Request failed: " + textStatus);
+    });
+
+  })
+</script>

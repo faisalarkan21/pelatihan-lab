@@ -1,0 +1,67 @@
+ {{>headerAdmin}}
+
+<div style="margin-top:30px;" class="table-users col-md-10 col-md-offset-2 container">
+    <div style="margin-top: 70px;" class="page-header text-center well">
+        <div class="col-md-12 ">
+            <div class="col-md-13">
+                <h1 class="judul">Daftar Soal Java </h1>
+
+                <hr class="Garistema">
+
+            </div>
+
+
+
+
+        </div>
+
+        <div style="font-size: 3px;" class="bs-component">
+            <table class="table table-hover jadi-vertical">
+                <thead>
+                    <tr class="headerTengah" id="warnaTr">
+                        <th>No Soal</th>
+                        <th>Ringkasan Soal</th>
+                        <th>Jawaban</th>
+                        <th colspan="3">Tindakan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each dataSemua}}
+                    <tr class="<%=trUser%>">
+                        <td class="text-center tengah pagination-centered">
+                            {{tambahSatuAdmin @index}}
+                        </td>
+                        <td class="text-center tengah pagination-centered">
+                            {{this.judul_soal}}
+                        </td>
+                        <td class="text-center tengah pagination-centered">
+                            {{this.jawaban}}
+                        </td>
+                     
+
+
+
+                        <td id="btn-edit" class="tengah text-center"> <a class="btn btn-raised btn-info" href="/admin/dashboard/user-detail/{{this.id_pembeli}}">Detail</a></td>
+                        {{/each}}
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-offset-10">
+
+        <a class="btn btn-raised btn-primary" href="/add-soal">Tambah Soal</a>
+    </div>
+</div>
+</div>
+
+</body>
+
+</html>
+{{>footer}}
+
+
+<script>
+</script>
